@@ -33,48 +33,11 @@ Then run from anywhere:
 mineai
 ```
 
-Or you can install it from source:
 
-```bash
-git clone https://github.com/your-org/mine-ai.git
-cd mine-ai
-npm install
-npm install -g .
-```
 
 ### API Configuration
 
-#### Option 1: Mine AI API (Default)
-Set your Mine AI API key (In Mine AI project, you can also set your API key in `.env` file):
-
-```bash
-export MINEAI_API_KEY="your_api_key_here"
-export MINEAI_BASE_URL="your_api_base_url_here"
-export OPENAI_MODEL="moonshotai/Kimi-K2-Instruct"
-```
-
-#### Option 2: HuggingFace Kimi K2 with Proxy Platform
-For using HuggingFace Kimi K2 model through HuggingFace Router:
-
-```bash
-export HUGGINGFACE_API_KEY="your_huggingface_api_key"
-export HUGGINGFACE_BASE_URL="https://router.huggingface.co/v1"
-export OPENAI_MODEL="moonshotai/Kimi-K2-Instruct:novita"
-```
-
-Available providers for Kimi K2:
-- `moonshotai/Kimi-K2-Instruct:novita`
-- `moonshotai/Kimi-K2-Instruct:fireworks-ai`
-- `moonshotai/Kimi-K2-Instruct:together`
-- `moonshotai/Kimi-K2-Instruct:groq`
-
-Or use a custom proxy platform directly:
-
-```bash
-export PROXY_API_KEY="your_proxy_api_key"
-export PROXY_BASE_URL="your_proxy_platform_base_url"
-export OPENAI_MODEL="moonshotai/Kimi-K2-Instruct"
-```
+要配置 API，请访问我们的平台获取您的 API 密钥、基础 URL 和模型信息。
 
 ## Usage Examples
 
