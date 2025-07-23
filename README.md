@@ -39,57 +39,9 @@ mineai
 
 要配置 API，请访问我们的平台获取您的 API 密钥、基础 URL 和模型信息。
 
-## Usage Examples
+## Node Operation Examples (TDB)
 
-### Explore Codebases
-
-```sh
-cd your-project/
-mineai
-> Describe the main pieces of this system's architecture
-```
-
-### Code Development
-
-```sh
-> Refactor this function to improve readability and performance
-```
-
-### Automate Workflows
-
-```sh
-> Analyze git commits from the last 7 days, grouped by feature and team member
-```
-
-```sh
-> Convert all images in this directory to PNG format
-```
-
-## Popular Tasks
-
-### Understand New Codebases
-
-```text
-> What are the core business logic components?
-> What security mechanisms are in place?
-> How does the data flow work?
-```
-
-### Code Refactoring & Optimization
-
-```text
-> What parts of this module can be optimized?
-> Help me refactor this class to follow better design patterns
-> Add proper error handling and logging
-```
-
-### Documentation & Testing
-
-```text
-> Generate comprehensive JSDoc comments for this function
-> Write unit tests for this component
-> Create API documentation
-```
+TDB
 
 ## Benchmark Results
 
@@ -99,27 +51,7 @@ mineai
 |-----------|--------------------|----------|
 | Mine AI | moonshotai/Kimi-K2-Instruct | 37.5     |
 
-## Project Structure
 
-```
-mine-ai/
-├── packages/           # Core packages
-├── docs/              # Documentation
-├── examples/          # Example code
-└── tests/            # Test files
-```
-
-## Development & Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute to the project.
-
-## Troubleshooting
-
-If you encounter issues, check the [troubleshooting guide](docs/troubleshooting.md).
-
-## Acknowledgments
-
-This project is based on [Google Gemini CLI](https://github.com/google-gemini/gemini-cli). We acknowledge and appreciate the excellent work of the Gemini CLI team. Our main contribution focuses on parser-level adaptations to better support Kimi-K2 models.
 
 ## License
 
