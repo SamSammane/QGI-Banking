@@ -1,6 +1,6 @@
 # Mine AI
 
-![Mine AI Screenshot](./docs/assets/qwen-screenshot.png)
+![Mine AI Screenshot](./docs/assets/mine-screenshot.png)
 
 Mine AI is a command-line AI workflow tool adapted from [**Gemini CLI**](https://github.com/google-gemini/gemini-cli)(Please refer to [this document](./README.gemini.md) for more details), optimized for [Kimi-K2](https://huggingface.co/moonshotai/Kimi-K2-Instruct) models with enhanced parser support & tool support.
 
