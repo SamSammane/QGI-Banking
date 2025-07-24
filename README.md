@@ -1,26 +1,46 @@
 # Mine AI
 
+```
+ __  __ _            _    ___ 
+|  \/  (_)_ __   ___| |  |_ _|
+| |\/| | | '_ \ / _ \ |   | | 
+| |  | | | | | |  __/ |   | | 
+|_|  |_|_|_| |_|\___|_|  |___|
+                              
+```
+![Mine AI Screenshot](./docs/assets/mine-screenshot.png)
+
 [**English**](#english) | [**中文**](#中文) | [**日本語**](#日本語) | [**Español**](#español)
 
 ---
 
 ## English
 
-![Mine AI Screenshot](./docs/assets/mine-screenshot.png)
+
 
 Mine AI is an intelligent command-line assistant that revolutionizes crypto node operations through advanced AI automation. Built specifically for the blockchain ecosystem, Mine AI leverages the power of Kimi-K2 models to provide seamless, one-click solutions for deploying, managing, and optimizing cryptocurrency nodes across multiple networks.
 
-## 🤖 About Mine AI
+## About Mine AI
+
+```
+    ┌─────────────────────────────────────┐
+    │  AI-Powered Blockchain Assistant    │
+    │                                     │
+    │  [Node] ──> [AI Brain] ──> [Deploy] │
+    │     │           │            │      │
+    │  Monitor    Analyze      Optimize   │
+    └─────────────────────────────────────┘
+```
 
 Mine AI represents the next generation of blockchain development tools, bringing the power of conversational AI directly to your terminal. Like having a crypto expert at your fingertips, Mine AI understands complex blockchain operations and translates them into simple, executable commands.
 
 ### Why Choose Mine AI?
 
-**🧠 Intelligent Understanding** - Mine AI doesn't just execute commands; it understands context, anticipates needs, and provides intelligent suggestions based on your specific setup and goals.
+**Intelligent Understanding** - Mine AI doesn't just execute commands; it understands context, anticipates needs, and provides intelligent suggestions based on your specific setup and goals.
 
-**🔗 Blockchain Native** - Built from the ground up for crypto operations, with deep knowledge of protocols, consensus mechanisms, and network-specific optimizations.
+**Blockchain Native** - Built from the ground up for crypto operations, with deep knowledge of protocols, consensus mechanisms, and network-specific optimizations.
 
-**🎯 Purpose-Built** - Every feature is designed specifically for crypto node operators, from beginners taking their first steps to experienced validators managing complex infrastructures.
+**Purpose-Built** - Every feature is designed specifically for crypto node operators, from beginners taking their first steps to experienced validators managing complex infrastructures.
 
 ## 🚀 Key Features
 - **🔧 One-Click Node Deployment** - Automated setup for crypto projects (both new and established) with zero configuration hassle
@@ -30,7 +50,28 @@ Mine AI represents the next generation of blockchain development tools, bringing
 - **🔌 Multi-Provider Support** - Support for various API providers including OpenRouter, HuggingFace, and custom platforms
 - **🛠️ Tool Enhancement** - Advanced toolchain for node monitoring, maintenance, and optimization
 
-## 🎯 Perfect For
+## Perfect For
+
+```
+┌─ TARGET USERS ─────────────────────────────┐
+│                                            │
+│  [Beginner]   Crypto Beginners             │
+│               ├─ No technical background   │
+│               └─ AI guides everything      │
+│                                            │
+│  [Operator]   Node Operators               │
+│               ├─ Streamline workflows      │
+│               └─ Advanced management       │
+│                                            │
+│  [Farmer]     DeFi Farmers                 │
+│               ├─ Quick yield deployment    │
+│               └─ Staking automation        │
+│                                            │
+│  [Dev]        Blockchain Developers        │
+│               ├─ Rapid prototyping         │
+│               └─ Testing environments      │
+└────────────────────────────────────────────┘
+```
 
 - **Crypto Beginners** - No technical background required, AI guides you through everything
 - **Node Operators** - Streamline your existing node management workflows
@@ -109,73 +150,106 @@ export MINEAI_BASE_URL="your_api_base_url_here"
 export OPENAI_MODEL="moonshotai/Kimi-K2-Instruct"
 ```
 
-## 🎮 One-Click Node Operations
+## One-Click Node Operations
+
+```
+ TRENDING CRYPTO PROJECTS
+┌────────────────────────────────────┐
+│                                    │
+│  GenSyn ──┐                       │
+│           ├─ Validator Setup       │
+│  Boundless┤                       │
+│           ├─ RPC Node Deployment   │
+│  NeuraBit─┤                       │
+│           ├─ Mining Node Setup     │
+│  VectorAI─┤                       │
+│           └─ Consensus Node        │
+│                                    │
+│  [AI] ──> Auto-Config ──> Deploy   │
+└────────────────────────────────────┘
+```
 
 ### Popular Crypto Projects
 
 ```bash
-# Ethereum Validator Setup
-mineai deploy ethereum-validator
+# GenSyn AI Network Validator
+mineai "Deploy a GenSyn validator node with optimal staking configuration"
 
-# Solana RPC Node
-mineai deploy solana-rpc --network mainnet
+# Boundless RPC Node
+mineai "Set up a Boundless RPC node on mainnet with auto-sync"
 
-# Bitcoin Lightning Node
-mineai deploy lightning-node --auto-configure
+# NeuraBit Mining Node
+mineai "Configure a NeuraBit mining node with best performance settings"
 
-# Polygon Validator
-mineai deploy polygon-validator --stake-amount 1000
+# VectorAI Consensus Validator
+mineai "Create VectorAI validator with 1000 token stake and monitoring"
 
-# Arbitrum Node
-mineai deploy arbitrum-node --sync-mode fast
+# ChainMind Node
+mineai "Install ChainMind node with fast sync and security hardening"
 ```
 
 ### DeFi & Yield Farming
 ```bash
-# Uniswap V3 Liquidity Provider Setup
-mineai deploy uniswap-lp --pair ETH/USDC --range 0.05%
+# CryptoYield LP Setup
+mineai "Set up CryptoYield liquidity pool for GSYN/USDC with 0.05% range"
 
-# Compound Finance Node
-mineai deploy compound-node --auto-optimize
+# BoundVault Staking Node
+mineai "Deploy BoundVault staking node with auto-optimization enabled"
 
-# Aave Protocol Integration
-mineai deploy aave-node --enable-flashloans
+# NeuralFarm Integration
+mineai "Configure NeuralFarm node to maximize reward collection"
 ```
 
 ### Emerging Projects
 ```bash
 # Generic node deployment with AI analysis
-mineai analyze-project --url https://github.com/new-crypto-project
-mineai deploy auto --project new-crypto-project
+mineai "Analyze this GitHub project and help me deploy a profitable node"
+
+mineai "What's the best way to run a quantum-ledger node for passive income?"
 
 # AI-powered profitability analysis
-mineai profit-analysis --compare-projects --timeframe 30d
+mineai "Compare profitability of top 5 node projects over the last 30 days"
 ```
 
-## 🔍 Smart Node Management
+## Smart Node Management
+
+```
+ MONITORING & OPTIMIZATION
+┌─────────────────────────────────────┐
+│                                     │
+│  Health ──┐                        │
+│           ├─ Real-time Dashboard    │
+│  Monitor ─┤                        │
+│           ├─ Performance Alerts     │
+│  Optimize─┤                        │
+│           └─ Auto-tune Parameters   │
+│                                     │
+│  [Status] ──> [Analysis] ──> [Fix]  │
+└─────────────────────────────────────┘
+```
 
 ### Health Monitoring
 ```bash
 # Comprehensive health check
-mineai health-check --all-nodes
+mineai "Check the health status of all my running nodes"
 
 # Real-time monitoring dashboard
-mineai monitor --dashboard --alerts
+mineai "Set up a monitoring dashboard with alerts for my node infrastructure"
 
 # Performance optimization
-mineai optimize --node ethereum-validator --auto-tune
+mineai "Optimize my GenSyn validator for better performance and rewards"
 ```
 
 ### Maintenance Automation
 ```bash
 # Auto-update all nodes
-mineai update --all --schedule weekly
+mineai "Schedule weekly updates for all my crypto nodes safely"
 
 # Backup management
-mineai backup --encrypt --cloud-storage
+mineai "Create encrypted backups of my node data to cloud storage"
 
 # Security audit
-mineai security-scan --comprehensive
+mineai "Perform a comprehensive security audit of my node setup"
 ```
 
 ## 📚 Built-in Knowledge Base
@@ -190,29 +264,46 @@ Mine AI comes with a comprehensive private RAG database containing:
 
 ```bash
 # Query the knowledge base
-mineai knowledge "How to optimize Ethereum node performance?"
-mineai knowledge "Best practices for securing a Bitcoin node"
-mineai knowledge "Comparison between Solana and Ethereum staking rewards"
+mineai "How can I optimize GenSyn node performance for maximum rewards?"
+mineai "What are the best security practices for running a Boundless node?"
+mineai "Compare staking rewards between NeuraBit and VectorAI networks"
 ```
 
-## 🌟 Beginner-Friendly Features
+## Beginner-Friendly Features
+
+```
+ LEARNING & GUIDANCE SYSTEM
+┌─────────────────────────────────────┐
+│                                     │
+│  Wizard ──┐                        │
+│           ├─ Interactive Setup      │
+│  Guide ───┤                        │
+│           ├─ Step-by-step Tutorial  │
+│  Learn ───┤                        │
+│           ├─ Educational Mode       │
+│  Recommend┤                        │
+│           └─ AI Project Suggestions │
+│                                     │
+│  [Beginner] ──> [AI] ──> [Expert]   │
+└─────────────────────────────────────┘
+```
 
 ### Guided Setup Wizard
 ```bash
 # Interactive setup for beginners
-mineai wizard
+mineai "I'm new to crypto nodes, help me get started with the most profitable option"
 
 # AI-powered project recommendation
-mineai recommend --budget 1000 --risk-level low --experience beginner
+mineai "Recommend the best node projects for $1000 budget with low risk"
 ```
 
 ### Educational Mode
 ```bash
 # Learn while you deploy
-mineai learn ethereum-staking --interactive
+mineai "Teach me about GenSyn staking while we set up my validator"
 
 # Crypto fundamentals course
-mineai course blockchain-basics
+mineai "Explain blockchain basics and help me understand node operations"
 ```
 
 ## Troubleshooting
@@ -225,22 +316,22 @@ mineai course blockchain-basics
 - Ensure the API key has the correct permissions
 
 **Node Deployment Failed**
-- Check hardware requirements: `mineai check-requirements`
-- Verify network connectivity: `mineai test-connection`
-- Review deployment logs: `mineai logs --deployment-id <id>`
+- Check hardware requirements: `mineai "Check if my hardware meets the requirements for this node"`
+- Verify network connectivity: `mineai "Test my network connection and diagnose any issues"`
+- Review deployment logs: `mineai "Analyze my recent deployment logs and explain what went wrong"`
 
 **Language Issues**
-- Reset language settings: `mineai config --reset-language`
-- Update language packs: `mineai update --language-packs`
+- Reset language settings: `mineai "Change my interface language to English"`
+- Update language packs: `mineai "Update all language translations to the latest version"`
 
 ## Benchmark Results
 
 ### Node Deployment Success Rate
 | Project Type | Success Rate | Average Setup Time | Beginner Success Rate |
 |--------------|-------------|-------------------|---------------------|
-| Ethereum Validator | 98% | 12 minutes | 94% |
-| Bitcoin Node | 99% | 8 minutes | 97% |
-| Solana RPC | 96% | 15 minutes | 89% |
+| GenSyn Validator | 98% | 12 minutes | 94% |
+| Boundless Node | 99% | 8 minutes | 97% |
+| NeuraBit RPC | 96% | 15 minutes | 89% |
 | DeFi Protocols | 92% | 18 minutes | 85% |
 
 ### AI Performance
@@ -262,17 +353,16 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 中文
 
-![Mine AI 截图](./docs/assets/mine-screenshot.png)
 
 Mine AI 是一个智能命令行助手，通过先进的 AI 自动化彻底改变加密货币节点操作。专为区块链生态系统构建，Mine AI 利用 Kimi-K2 模型的强大能力，为跨多个网络部署、管理和优化加密货币节点提供无缝的一键式解决方案。
 
 ## 🤖 关于 Mine AI
 
-Mine AI 代表着区块链开发工具的下一代，将对话式 AI 的力量直接带到您的终端。就像在指尖拥有一位加密专家，Mine AI 理解复杂的区块链操作并将其转化为简单、可执行的命令。
+Mine AI 代表着区块链开发工具的下一代，将对话式 AI 的力量直接带到你的终端。就像在指尖拥有一位加密专家，Mine AI 理解复杂的区块链操作并将其转化为简单、可执行的命令。
 
 ### 为什么选择 Mine AI？
 
-**🧠 智能理解** - Mine AI 不仅仅执行命令；它理解上下文，预测需求，并根据您的特定设置和目标提供智能建议。
+**🧠 智能理解** - Mine AI 不仅仅执行命令；它理解上下文，预测需求，并根据你的特定设置和目标提供智能建议。
 
 **🔗 区块链原生** - 从头开始为加密操作构建，深度了解协议、共识机制和网络特定优化。
 
@@ -322,42 +412,43 @@ mineai config --language es  # 西班牙文
 ### 热门加密项目
 
 ```bash
-# 以太坊验证者设置
-mineai deploy ethereum-validator
+# GenSyn AI 网络验证者
+mineai "部署一个 GenSyn 验证节点，使用最优质押配置"
 
-# Solana RPC 节点
-mineai deploy solana-rpc --network mainnet
+# Boundless RPC 节点
+mineai "在主网上设置 Boundless RPC 节点并启用自动同步"
 
-# 比特币闪电网络节点
-mineai deploy lightning-node --auto-configure
+# NeuraBit 挖矿节点
+mineai "配置 NeuraBit 挖矿节点，优化性能设置"
 
-# Polygon 验证者
-mineai deploy polygon-validator --stake-amount 1000
+# VectorAI 共识验证者
+mineai "创建 VectorAI 验证者，质押 1000 代币并启用监控"
 
-# Arbitrum 节点
-mineai deploy arbitrum-node --sync-mode fast
+# ChainMind 节点
+mineai "安装 ChainMind 节点，使用快速同步和安全加固"
 ```
 
 ### DeFi 和收益农场
 ```bash
-# Uniswap V3 流动性提供者设置
-mineai deploy uniswap-lp --pair ETH/USDC --range 0.05%
+# CryptoYield LP 设置
+mineai "为 GSYN/USDC 设置 CryptoYield 流动性池，范围 0.05%"
 
-# Compound Finance 节点
-mineai deploy compound-node --auto-optimize
+# BoundVault 质押节点
+mineai "部署 BoundVault 质押节点并启用自动优化"
 
-# Aave 协议集成
-mineai deploy aave-node --enable-flashloans
+# NeuralFarm 集成
+mineai "配置 NeuralFarm 节点以最大化奖励收集"
 ```
 
 ### 新兴项目
 ```bash
 # 通过 AI 分析进行通用节点部署
-mineai analyze-project --url https://github.com/new-crypto-project
-mineai deploy auto --project new-crypto-project
+mineai "分析这个 GitHub 项目并帮我部署一个盈利的节点"
+
+mineai "运行 quantum-ledger 节点获得被动收入的最佳方法是什么？"
 
 # AI 驱动的盈利能力分析
-mineai profit-analysis --compare-projects --timeframe 30d
+mineai "比较过去 30 天内前 5 个节点项目的盈利能力"
 ```
 
 ## 📚 内置知识库
@@ -372,9 +463,9 @@ Mine AI 配备了全面的私有 RAG 数据库，包含：
 
 ```bash
 # 查询知识库
-mineai knowledge "如何优化以太坊节点性能？"
-mineai knowledge "比特币节点安全的最佳实践"
-mineai knowledge "Solana 和以太坊质押奖励对比"
+mineai "如何优化 GenSyn 节点性能以获得最大奖励？"
+mineai "运行 Boundless 节点的最佳安全实践是什么？"
+mineai "比较 NeuraBit 和 VectorAI 网络的质押奖励"
 ```
 
 ## 🌟 小白友好功能
@@ -391,10 +482,10 @@ mineai recommend --budget 1000 --risk-level low --experience beginner
 ### 教育模式
 ```bash
 # 边部署边学习
-mineai learn ethereum-staking --interactive
+mineai "在设置验证者的同时教我 GenSyn 质押知识"
 
 # 加密基础课程
-mineai course blockchain-basics
+mineai "解释区块链基础知识并帮我理解节点操作"
 ```
 
 ## 基准测试结果
@@ -402,9 +493,9 @@ mineai course blockchain-basics
 ### 节点部署成功率
 | 项目类型 | 成功率 | 平均设置时间 | 新手成功率 |
 |----------|--------|-------------|-----------|
-| 以太坊验证者 | 98% | 12 分钟 | 94% |
-| 比特币节点 | 99% | 8 分钟 | 97% |
-| Solana RPC | 96% | 15 分钟 | 89% |
+| GenSyn 验证者 | 98% | 12 分钟 | 94% |
+| Boundless 节点 | 99% | 8 分钟 | 97% |
+| NeuraBit RPC | 96% | 15 分钟 | 89% |
 | DeFi 协议 | 92% | 18 分钟 | 85% |
 
 ### AI 性能
@@ -418,7 +509,6 @@ mineai course blockchain-basics
 
 ## 日本語
 
-![Mine AI スクリーンショット](./docs/assets/mine-screenshot.png)
 
 Mine AI は、高度な AI 自動化を通じて暗号通貨ノード操作を革命化するインテリジェントなコマンドライン アシスタントです。ブロックチェーン エコシステム専用に構築された Mine AI は、Kimi-K2 モデルの力を活用して、複数のネットワークにわたる暗号通貨ノードの展開、管理、最適化のためのシームレスなワンクリック ソリューションを提供します。
 
@@ -436,21 +526,20 @@ Mine AI は、高度な AI 自動化を通じて暗号通貨ノード操作を�
 ### 人気暗号プロジェクト
 
 ```bash
-# イーサリアムバリデータセットアップ
-mineai deploy ethereum-validator
+# GenSyn AI ネットワークバリデータ
+mineai deploy gensyn-validator
 
-# Solana RPC ノード
-mineai deploy solana-rpc --network mainnet
+# Boundless RPC ノード
+mineai deploy boundless-rpc --network mainnet
 
-# ビットコインライトニングノード
-mineai deploy lightning-node --auto-configure
+# NeuraBit マイニングノード
+mineai deploy neurabit-node --auto-configure
 ```
 
 ---
 
 ## Español
 
-![Captura de Mine AI](./docs/assets/mine-screenshot.png)
 
 Mine AI es un asistente inteligente de línea de comandos que revoluciona las operaciones de nodos cripto a través de automatización avanzada de IA. Construido específicamente para el ecosistema blockchain, Mine AI aprovecha el poder de los modelos Kimi-K2 para proporcionar soluciones seamless de un clic para desplegar, gestionar y optimizar nodos de criptomonedas a través de múltiples redes.
 
@@ -466,14 +555,14 @@ Mine AI es un asistente inteligente de línea de comandos que revoluciona las op
 ### Proyectos Cripto Populares
 
 ```bash
-# Configuración de Validador Ethereum
-mineai deploy ethereum-validator
+# Validador de Red GenSyn AI
+mineai deploy gensyn-validator
 
-# Nodo RPC Solana
-mineai deploy solana-rpc --network mainnet
+# Nodo RPC Boundless
+mineai deploy boundless-rpc --network mainnet
 
-# Nodo Lightning Bitcoin
-mineai deploy lightning-node --auto-configure
+# Nodo de Minería NeuraBit
+mineai deploy neurabit-node --auto-configure
 ```
 
 ## Licencia
