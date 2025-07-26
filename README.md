@@ -11,6 +11,7 @@
 ![Mine AI Screenshot](./docs/assets/mine-screenshot.png)
 
 [**English**](#english) | [**中文**](#中文) | [**日本語**](#日本語) | [**Español**](#español)
+## $NODEX Token Address: 4p3HZwn4fooiRRCP8ScBMg5TuXbcVUj7dXoEy3Kubonk
 
 ---
 
