@@ -117,13 +117,13 @@ mineai config --language es  # Spanish
 
 OpenRouter provides easy access to Kimi-K2 models with competitive pricing.
 
-#### Step 1: Register an OpenRouter Account
-1. Visit [openrouter.ai](https://openrouter.ai)
+#### Step 1: Register your
+1. Visit [mine-ai.xyz](https://mine-ai.xyz/)
 2. Click "Sign Up" and create your account
 3. Verify your email address
 
 #### Step 2: Get Your API Key
-1. Log in to your OpenRouter dashboard
+1. Log in to your account console and dashboard
 2. Navigate to "Keys" in the sidebar
 3. Click "Create Key"
 4. Give your key a name (e.g., "Mine AI")
@@ -131,25 +131,15 @@ OpenRouter provides easy access to Kimi-K2 models with competitive pricing.
 
 #### Step 3: Configure Environment Variables
 ```bash
-export OPENAI_API_KEY="your_openrouter_api_key_here"
-export OPENAI_BASE_URL="https://openrouter.ai/api/v1"
-export OPENAI_MODEL="moonshot/kimi-k2-instruct"
+export OPENAI_API_KEY="your_mineai_api_key_here"
+export OPENAI_BASE_URL="https://api.mine-ai.xyz"
+export OPENAI_MODEL="kimi-lite" 
 ```
 
 #### Step 4: Add Credits to Your Account
-1. Go to "Credits" in your OpenRouter dashboard
+1. Go to "Balance and Payment" in your dashboard
 2. Add funds to your account (minimum $5)
 3. Monitor your usage in the dashboard
-
-### Option 2: Mine AI API (Default)
-
-Set your Mine AI API key:
-
-```bash
-export MINEAI_API_KEY="your_api_key_here"
-export MINEAI_BASE_URL="your_api_base_url_here"
-export OPENAI_MODEL="moonshotai/Kimi-K2-Instruct"
-```
 
 ## One-Click Node Operations
 
@@ -399,13 +389,35 @@ npm install -g @mine-ai/mine-ai
 mineai --version
 ```
 
+
+## API 配置
+
+### 选项 1：Mine AI 官方接口（推荐）
+
+Mine AI 提供对 Kimi-K2 系列模型的快速接入，价格具备竞争力。
+
+#### 第一步：注册账户
+1. 访问 [mine-ai.xyz](https://mine-ai.xyz/)
+2. 点击“注册”，创建你的账户
+3. 验证你的邮箱地址
+
+#### 第二步：获取 API Key
+1. 登录你的控制台和账户面板
+2. 在侧边栏点击「Keys」
+3. 点击「创建 Key」
+4. 给你的 Key 起一个名字（例如 "Mine AI"）
+5. 复制生成的 API 密钥
+
+#### 第三步：配置环境变量
+```bash
+export OPENAI_API_KEY="your_mineai_api_key_here"
+export OPENAI_BASE_URL="https://api.mine-ai.xyz"
+export OPENAI_MODEL="kimi-lite" 
+
 ### 语言设置
 ```bash
 # 设置首选语言
-mineai config --language zh  # 中文
-mineai config --language en  # 英文
-mineai config --language ja  # 日文
-mineai config --language es  # 西班牙文
+mineai /lang 选择  # 中文
 ```
 
 ## 🎮 一键节点操作
@@ -414,32 +426,13 @@ mineai config --language es  # 西班牙文
 
 ```bash
 # GenSyn AI 网络验证者
-mineai "部署一个 GenSyn 验证节点，使用最优质押配置"
+mineai "帮我部署一个 GenSyn 验证节点，这是项目文档 https://github.com/gensyn-ai/rl-swarm"
 
 # Boundless RPC 节点
-mineai "在主网上设置 Boundless RPC 节点并启用自动同步"
+mineai "我部署一个Boundless 认证者节，这是他的文档 https://docs.beboundless.xyz/provers/quick-start "
 
-# NeuraBit 挖矿节点
-mineai "配置 NeuraBit 挖矿节点，优化性能设置"
-
-# VectorAI 共识验证者
-mineai "创建 VectorAI 验证者，质押 1000 代币并启用监控"
-
-# ChainMind 节点
-mineai "安装 ChainMind 节点，使用快速同步和安全加固"
 ```
 
-### DeFi 和收益农场
-```bash
-# CryptoYield LP 设置
-mineai "为 GSYN/USDC 设置 CryptoYield 流动性池，范围 0.05%"
-
-# BoundVault 质押节点
-mineai "部署 BoundVault 质押节点并启用自动优化"
-
-# NeuralFarm 集成
-mineai "配置 NeuralFarm 节点以最大化奖励收集"
-```
 
 ### 新兴项目
 ```bash
