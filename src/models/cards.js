@@ -30,12 +30,13 @@ export const MODEL_CARDS = {
     ],
     paper: {
       title:
-        'CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment',
+        'CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment',
       authors: 'Zhao, Yuan, Wang, Shen, Huang',
-      venue: 'Preprints.org',
+      venue: 'CNML 2026 (International Conference on Communication Networks and Machine Learning)',
+      publisher: 'IEEE',
       year: '2026',
-      doi: '10.20944/preprints202602.0543.v1',
-      url: 'https://doi.org/10.20944/preprints202602.0543.v1',
+      doi: '10.1109/CNML68938.2026.11452378',
+      url: 'https://doi.org/10.1109/CNML68938.2026.11452378',
     },
     status:
       'PyTorch reference implementation shipped in v0.1 at models/cssa/ (3-layer GCN structural branch + OpenAI-compatible semantic encoder + symmetric InfoNCE contrastive alignment + joint classifier + CPU synthetic demo). LoRA-tuned ChatGLM3-6B semantic branch and full ablation harness targeted for Roadmap Phase II.',

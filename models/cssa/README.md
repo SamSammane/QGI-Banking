@@ -2,7 +2,7 @@
 
 A PyTorch reproduction of the dual-branch architecture introduced in:
 
-> Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026.
+> Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* CNML 2026 (IEEE), DOI [10.1109/CNML68938.2026.11452378](https://doi.org/10.1109/CNML68938.2026.11452378).
 
 ## What this is
 
@@ -49,11 +49,12 @@ The demo builds a 200-node synthetic text-attributed graph with a planted fraud 
 ## Citation
 
 ```
-@misc{zhao2026cssa,
-  title  = {CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment},
-  author = {Zhao, Zirui and Yuan, Keyu and Wang, Ziyue and Shen, Jiaqing and Huang, Yirui},
-  year   = {2026},
-  howpublished = {Preprints.org},
-  doi    = {10.20944/preprints202602.0543.v1}
+@inproceedings{zhao2026cssa,
+  title     = {CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment},
+  author    = {Zhao, Zirui and Yuan, Keyu and Wang, Ziyue and Shen, Jiaqing and Huang, Yirui},
+  booktitle = {Proceedings of the 2026 International Conference on Communication Networks and Machine Learning (CNML)},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/CNML68938.2026.11452378}
 }
 ```

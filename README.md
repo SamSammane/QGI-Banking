@@ -80,7 +80,7 @@ Reference implementations of three published or peer-citable architectures for p
 - Methodologically distinct from standalone GNN classifiers (which lack temporal sensitivity) and standalone recurrent classifiers (which lack graph-structural inductive bias).
 
 ### CSSA — Cross-Modal Semantic-Structural Alignment
-- **Preprint:** Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026. DOI [10.20944/preprints202602.0543.v1](https://doi.org/10.20944/preprints202602.0543.v1).
+- **Paper:** Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* CNML 2026 (IEEE), **DOI [10.1109/CNML68938.2026.11452378](https://doi.org/10.1109/CNML68938.2026.11452378)**.
 - Integrates LLM semantic representations with graph-contrastive structural representations through a unified contrastive objective. Addresses the gap left by separate semantic (NLP-on-memos) and structural (GNN-on-graph) models that lack aligned cross-modal representation.
 
 ### FinSCRA — LLM-Powered Multi-Chain Reasoning
@@ -207,7 +207,7 @@ The roadmap maps to the technical agenda this project exists to support.
 
 ### Methods
 - Yuan, Lin, Wu, Chang. *Detection of Blockchain Online Payment Fraud Via CNN-LSTM.* BDICN 2026, ACM Digital Library. DOI [10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323).
-- Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026. DOI [10.20944/preprints202602.0543.v1](https://doi.org/10.20944/preprints202602.0543.v1).
+- Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* CNML 2026 (IEEE). DOI [10.1109/CNML68938.2026.11452378](https://doi.org/10.1109/CNML68938.2026.11452378).
 - Pan, Chen, He, Yuan, Wang, Zhang. *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs.* ICCECE 2026 (IEEE). DOI [10.1109/ICCECE69169.2026.11399797](https://doi.org/10.1109/ICCECE69169.2026.11399797).
 
 ### U.S. policy and regulatory sources

@@ -7,7 +7,7 @@ These implementations are **architectural reproductions**, not the original trai
 | Directory | Paper | Status |
 |---|---|---|
 | [`cnn_lstm/`](./cnn_lstm/) | Yuan, Lin, Wu, Chang — *Detection of Blockchain Online Payment Fraud Via CNN-LSTM*, BDICN 2026 (ACM, [DOI 10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323)) | Model + SMOTE pipeline + economic-threshold optimizer + synthetic demo |
-| [`cssa/`](./cssa/) | Zhao, Yuan, Wang, Shen, Huang — *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment*, Preprints.org 2026 | Dual-branch model (GCN + OpenAI-compatible semantic encoder) + contrastive alignment loss + synthetic demo |
+| [`cssa/`](./cssa/) | Zhao, Yuan, Wang, Shen, Huang — *CSSA: A Cross-modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment*, CNML 2026 (IEEE, [DOI 10.1109/CNML68938.2026.11452378](https://doi.org/10.1109/CNML68938.2026.11452378)) | Dual-branch model (GCN + OpenAI-compatible semantic encoder) + contrastive alignment loss + synthetic demo |
 | [`finscra/`](./finscra/) | Pan, Chen, He, Yuan, Wang, Zhang — *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs*, ICCECE 2026 (IEEE) | 7 reasoning chains + 3 hint extractors + fuzzy aggregation + centroid defuzzification + synthetic supply-chain demo |
 
 ## How the implementations relate to the papers
