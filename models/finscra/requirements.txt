@@ -1,0 +1,2 @@
+# No third-party Python dependencies. Uses urllib from the standard library
+# for the OpenAI-compatible HTTP call.

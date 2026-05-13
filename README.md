@@ -72,7 +72,7 @@ If detection models cannot trust the underlying ledger state (Module 2), their o
 
 ## Module 1 — Graph-Temporal Fraud Detection Models
 
-Reference implementations of three published or peer-citable architectures for payment-fraud and AML/CFT detection on blockchain payment data.
+Reference implementations of three published or peer-citable architectures for payment-fraud and AML/CFT detection on blockchain payment data. The PyTorch / Python source for each architecture lives in [`models/`](./models/) — see [`models/README.md`](./models/README.md) for the directory map and per-model faithfulness notes.
 
 ### CNN-LSTM hybrid for blockchain payment fraud
 - **Paper:** *Detection of Blockchain Online Payment Fraud Via CNN-LSTM*, BDICN 2026 (5th International Conference on Big Data, Information and Computer Network), ACM Digital Library, **DOI [10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323)**.
@@ -80,20 +80,22 @@ Reference implementations of three published or peer-citable architectures for p
 - Methodologically distinct from standalone GNN classifiers (which lack temporal sensitivity) and standalone recurrent classifiers (which lack graph-structural inductive bias).
 
 ### CSSA — Cross-Modal Semantic-Structural Alignment
-- **Preprint:** *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment* (Preprints.org, 2026).
+- **Preprint:** Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026. DOI [10.20944/preprints202602.0543.v1](https://doi.org/10.20944/preprints202602.0543.v1).
 - Integrates LLM semantic representations with graph-contrastive structural representations through a unified contrastive objective. Addresses the gap left by separate semantic (NLP-on-memos) and structural (GNN-on-graph) models that lack aligned cross-modal representation.
 
 ### FinSCRA — LLM-Powered Multi-Chain Reasoning
-- **Preprint:** *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs* (Preprints.org, 2026).
+- **Paper:** Pan, Chen, He, Yuan, Wang, Zhang. *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs.* ICCECE 2026 (IEEE), **DOI [10.1109/ICCECE69169.2026.11399797](https://doi.org/10.1109/ICCECE69169.2026.11399797)**.
 - Introduces explicit chain-of-thought reasoning over heterogeneous on-chain entities. Interpretability-by-construction, designed to be operable in BSA / model-governance workflows where black-box graph classifiers struggle.
 
 ### Intended use
 ```bash
-# Run a reference detector against a labeled transaction-graph sample
+# Inspect the model card / paper / feature snapshot via the CLI
 mineai detect --model cnn-lstm --input ./samples/btc-fraud-sample.json
 
-# Reproduce a published benchmark
-mineai benchmark --model cssa --dataset ./datasets/cssa-eval/
+# Or run the actual reference PyTorch implementation (CPU, seconds)
+cd models/cnn_lstm && pip install -r requirements.txt && python demo.py
+cd models/cssa     && pip install -r requirements.txt && python demo.py
+cd models/finscra  && python demo.py   # needs OPENAI_API_KEY
 ```
 
 ---
@@ -205,8 +207,8 @@ The roadmap maps to the technical agenda this project exists to support.
 
 ### Methods
 - Yuan, Lin, Wu, Chang. *Detection of Blockchain Online Payment Fraud Via CNN-LSTM.* BDICN 2026, ACM Digital Library. DOI [10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323).
-- *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026.
-- *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs.* Preprints.org, 2026.
+- Zhao, Yuan, Wang, Shen, Huang. *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026. DOI [10.20944/preprints202602.0543.v1](https://doi.org/10.20944/preprints202602.0543.v1).
+- Pan, Chen, He, Yuan, Wang, Zhang. *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs.* ICCECE 2026 (IEEE). DOI [10.1109/ICCECE69169.2026.11399797](https://doi.org/10.1109/ICCECE69169.2026.11399797).
 
 ### U.S. policy and regulatory sources
 - FBI IC3 Annual Reports (2024, 2025).

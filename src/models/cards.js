@@ -17,7 +17,7 @@ export const MODEL_CARDS = {
       authors: 'Yuan, Lin, Wu, Chang',
     },
     status:
-      'Model card and reproducible-benchmark scaffolding shipped in v0.1. Full reference training code targeted for Roadmap Phase I.',
+      'PyTorch reference implementation shipped in v0.1 at models/cnn_lstm/ (model + SMOTE pipeline + weighted CE training loop + economic-threshold post-processor + CPU synthetic demo). Trained weights and Elliptic-dataset benchmark are tracked under Roadmap Phase II.',
   },
 
   cssa: {
@@ -31,11 +31,14 @@ export const MODEL_CARDS = {
     paper: {
       title:
         'CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment',
+      authors: 'Zhao, Yuan, Wang, Shen, Huang',
       venue: 'Preprints.org',
       year: '2026',
+      doi: '10.20944/preprints202602.0543.v1',
+      url: 'https://doi.org/10.20944/preprints202602.0543.v1',
     },
     status:
-      'Model card shipped in v0.1. Reference implementation and ablation harness targeted for Roadmap Phase I/II.',
+      'PyTorch reference implementation shipped in v0.1 at models/cssa/ (3-layer GCN structural branch + OpenAI-compatible semantic encoder + symmetric InfoNCE contrastive alignment + joint classifier + CPU synthetic demo). LoRA-tuned ChatGLM3-6B semantic branch and full ablation harness targeted for Roadmap Phase II.',
   },
 
   finscra: {
@@ -50,11 +53,15 @@ export const MODEL_CARDS = {
     paper: {
       title:
         'FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs',
-      venue: 'Preprints.org',
+      authors: 'Pan, Chen, He, Yuan, Wang, Zhang',
+      venue: 'ICCECE 2026 (6th International Conference on Consumer Electronics and Computer Engineering)',
+      publisher: 'IEEE',
       year: '2026',
+      doi: '10.1109/ICCECE69169.2026.11399797',
+      url: 'https://doi.org/10.1109/ICCECE69169.2026.11399797',
     },
     status:
-      'Model card shipped in v0.1. Reference reasoning harness over text-attributed graphs targeted for Roadmap Phase II.',
+      'Python reference implementation shipped in v0.1 at models/finscra/ (7 reasoning chains + 3 hint extractors + fuzzy aggregation + centroid defuzzification + synthetic supply-chain demo). LoRA-tuned ChatGLM3-6B reasoner and SCRD benchmark targeted for Roadmap Phase II.',
   },
 };
 
