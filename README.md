@@ -1,564 +1,230 @@
 # Mine AI
 
+**Open-Source Reference Implementations for AI-Enabled Payment Security, Fraud Detection, and AML/CFT Compliance**
+
 ```
- __  __ _            _    ___ 
+ __  __ _            _    ___
 |  \/  (_)_ __   ___| |  |_ _|
-| |\/| | | '_ \ / _ \ |   | | 
-| |  | | | | | |  __/ |   | | 
+| |\/| | | '_ \ / _ \ |   | |
+| |  | | | | | |  __/ |   | |
 |_|  |_|_|_| |_|\___|_|  |___|
-                              
 ```
-![Mine AI Screenshot](./docs/assets/mine-screenshot.png)
-
-[**English**](#english) | [**中文**](#中文) | [**日本語**](#日本語) | [**Español**](#español)
-
 
 ---
 
-## English
+## What this is
 
+Mine AI is an open-source toolkit and command-line workspace for advancing AI-enabled payment-security, fraud-detection, AML/CFT compliance, and risk-control infrastructure for U.S.-accessible digital-asset and blockchain-based payment systems — through graph-temporal deep-learning models, production-grade transaction reconciliation and risk controls, and LLM-powered interpretable compliance reasoning.
 
+It is structured as three independently usable modules that together cover the detection layer, the operational risk-control layer, and the interpretability/compliance-reasoning layer of a modern payment-security stack.
 
-Mine AI is an intelligent command-line assistant that revolutionizes crypto node operations through advanced AI automation. Built specifically for the blockchain ecosystem, Mine AI leverages the power of Kimi-K2 models to provide seamless, one-click solutions for deploying, managing, and optimizing cryptocurrency nodes across multiple networks.
+This is **research and reference-implementation infrastructure**, not a production fraud-detection product and not financial, legal, or compliance advice.
 
-## About Mine AI
+---
 
-```
-    ┌─────────────────────────────────────┐
-    │  AI-Powered Blockchain Assistant    │
-    │                                     │
-    │  [Node] ──> [AI Brain] ──> [Deploy] │
-    │     │           │            │      │
-    │  Monitor    Analyze      Optimize   │
-    └─────────────────────────────────────┘
-```
+## Why this exists
 
-Mine AI represents the next generation of blockchain development tools, bringing the power of conversational AI directly to your terminal. Like having a crypto expert at your fingertips, Mine AI understands complex blockchain operations and translates them into simple, executable commands.
+Payment fraud and digital-asset-enabled financial crime are documented U.S. national-scale risk channels.
 
-### Why Choose Mine AI?
+- **FBI IC3 2025 Annual Report** reports approximately **$11.367 billion** in cryptocurrency-related losses and approximately **$8.649 billion** in investment-fraud losses in 2025.
+- **FinCEN National AML/CFT Priorities** identify cybercrime (with virtual-currency considerations) and fraud as significant AML/CFT threats.
+- **OFAC** has designated cryptocurrency mixing and cross-chain laundering infrastructure as sanctions targets, including Tornado Cash and Blender.
+- **Executive Order 14178** (January 23, 2025) directs the development of a federal digital-asset regulatory framework covering market structure, oversight, consumer protection, and risk management.
+- **Anti-Money Laundering Act of 2020** (Public Law 116-283, Title LXIV) modernized BSA-driven AML enforcement.
+- **OCC / Federal Reserve / FDIC 2026 revised interagency model-risk-management guidance** emphasizes model development, validation, monitoring, governance, controls, and third-party model review — explicitly acknowledging further work on banks' use of generative and agentic AI.
+- **2024 Critical and Emerging Technologies List** identifies artificial intelligence, large language models, distributed ledger technologies, digital assets, and digital payment technologies as priority areas.
 
-**Intelligent Understanding** - Mine AI doesn't just execute commands; it understands context, anticipates needs, and provides intelligent suggestions based on your specific setup and goals.
+Industry detection systems still rely heavily on rule-based heuristics — address blacklists, transaction-velocity thresholds, simple graph-search, and manual investigation workflows. These approaches struggle with the severe class imbalance characteristic of fraud datasets, the graph-structured and temporal nature of payment networks, and the interpretability requirements of regulated compliance review. Mine AI exists to make better methods reproducible and inspectable in the open.
 
-**Blockchain Native** - Built from the ground up for crypto operations, with deep knowledge of protocols, consensus mechanisms, and network-specific optimizations.
+---
 
-**Purpose-Built** - Every feature is designed specifically for crypto node operators, from beginners taking their first steps to experienced validators managing complex infrastructures.
+## Architecture
 
-## 🚀 Key Features
-- **🔧 One-Click Node Deployment** - Automated setup for crypto projects (both new and established) with zero configuration hassle
-- **📚 Built-in Private RAG Database** - Comprehensive knowledge base for crypto node operations, protocols, and best practices
-- **🎯 Beginner-Friendly Design** - Simplified commands and intelligent guidance for crypto newcomers
-- **⚡ Enhanced K2 Parser** - Specifically optimized for Kimi-K2 models with crypto-focused prompt engineering
-- **🔌 Multi-Provider Support** - Support for various API providers including OpenRouter, HuggingFace, and custom platforms
-- **🛠️ Tool Enhancement** - Advanced toolchain for node monitoring, maintenance, and optimization
-
-## Perfect For
+Mine AI is organized as three modules that map to the detection, operations, and compliance-reasoning layers of a payment-security stack:
 
 ```
-┌─ TARGET USERS ─────────────────────────────┐
-│                                            │
-│  [Beginner]   Crypto Beginners             │
-│               ├─ No technical background   │
-│               └─ AI guides everything      │
-│                                            │
-│  [Operator]   Node Operators               │
-│               ├─ Streamline workflows      │
-│               └─ Advanced management       │
-│                                            │
-│  [Farmer]     DeFi Farmers                 │
-│               ├─ Quick yield deployment    │
-│               └─ Staking automation        │
-│                                            │
-│  [Dev]        Blockchain Developers        │
-│               ├─ Rapid prototyping         │
-│               └─ Testing environments      │
-└────────────────────────────────────────────┘
++-----------------------------------------------------------------+
+|  Module 3 — LLM-Powered Interpretable Compliance Reasoning      |
+|    RAG over BSA / FinCEN / OFAC / EO 14178 corpus               |
+|    Interpretable chain-of-thought traces for review workflows   |
++-----------------------------------------------------------------+
+                              ^
+                              |
++-----------------------------------------------------------------+
+|  Module 1 — Graph-Temporal Fraud Detection Models               |
+|    CNN-LSTM hybrid (BDICN 2026)                                 |
+|    CSSA cross-modal alignment (LLM + graph contrastive)         |
+|    FinSCRA multi-chain interpretable reasoning                  |
++-----------------------------------------------------------------+
+                              ^
+                              |
++-----------------------------------------------------------------+
+|  Module 2 — Production Risk-Control & Reconciliation Patterns   |
+|    On-chain / off-chain reconciliation reference                |
+|    Health-factor monitoring + automated rebalancing patterns    |
+|    Adversarial-execution and oracle-manipulation defense notes  |
++-----------------------------------------------------------------+
 ```
 
-- **Crypto Beginners** - No technical background required, AI guides you through everything
-- **Node Operators** - Streamline your existing node management workflows
-- **DeFi Farmers** - Quick deployment of yield farming and staking nodes
-- **Blockchain Developers** - Rapid prototyping and testing environments
+If detection models cannot trust the underlying ledger state (Module 2), their outputs are unreliable; if their outputs cannot be explained (Module 3), they are difficult to operate in regulated workflows. The three modules are designed to be used together but can be adopted independently.
+
+---
+
+## Module 1 — Graph-Temporal Fraud Detection Models
+
+Reference implementations of three published or peer-citable architectures for payment-fraud and AML/CFT detection on blockchain payment data.
+
+### CNN-LSTM hybrid for blockchain payment fraud
+- **Paper:** *Detection of Blockchain Online Payment Fraud Via CNN-LSTM*, BDICN 2026 (5th International Conference on Big Data, Information and Computer Network), ACM Digital Library, **DOI [10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323)**.
+- The CNN component captures local structural patterns in graph-derived transaction features; the LSTM component captures temporal dependencies in transaction sequences. The hybrid is engineered to address the imbalanced-dataset problem through targeted sampling and loss-weighting strategies described in the paper.
+- Methodologically distinct from standalone GNN classifiers (which lack temporal sensitivity) and standalone recurrent classifiers (which lack graph-structural inductive bias).
+
+### CSSA — Cross-Modal Semantic-Structural Alignment
+- **Preprint:** *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment* (Preprints.org, 2026).
+- Integrates LLM semantic representations with graph-contrastive structural representations through a unified contrastive objective. Addresses the gap left by separate semantic (NLP-on-memos) and structural (GNN-on-graph) models that lack aligned cross-modal representation.
+
+### FinSCRA — LLM-Powered Multi-Chain Reasoning
+- **Preprint:** *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs* (Preprints.org, 2026).
+- Introduces explicit chain-of-thought reasoning over heterogeneous on-chain entities. Interpretability-by-construction, designed to be operable in BSA / model-governance workflows where black-box graph classifiers struggle.
+
+### Intended use
+```bash
+# Run a reference detector against a labeled transaction-graph sample
+mineai detect --model cnn-lstm --input ./samples/btc-fraud-sample.json
+
+# Reproduce a published benchmark
+mineai benchmark --model cssa --dataset ./datasets/cssa-eval/
+```
+
+---
+
+## Module 2 — Production Risk-Control & Reconciliation Patterns
+
+A documentation and reference-pattern library for the operational substrate that fraud-detection models depend on. Sourced from publicly observable DeFi-engineering patterns; **does not republish any proprietary protocol code**.
+
+Covers:
+- **On-chain / off-chain reconciliation** — connecting smart-contract state with backend accounting so that downstream detectors have reliable ground truth.
+- **Health-factor monitoring and automated rebalancing** — patterns for collateralized lending and BTCFi vault environments.
+- **Adversarial-execution defense** — engineering notes on MEV-aware execution paths.
+- **Oracle-manipulation defense** — design patterns for price-feed validation and circuit-breakers.
+- **Liquidation-cascade resilience** — operational notes informed by publicly reported cascade events.
+
+```bash
+# Generate a reconciliation-pattern scaffold
+mineai pattern reconciliation --chain sui --output ./my-recon-app/
+
+# Browse the pattern catalog
+mineai pattern list
+```
+
+---
+
+## Module 3 — LLM-Powered Interpretable Compliance Reasoning
+
+A retrieval-augmented reasoning workbench over public U.S. payment-security and AML/CFT corpora. Designed to produce **traceable, citation-grounded reasoning** rather than opaque classifications.
+
+Corpus (open sources only):
+- Bank Secrecy Act (31 U.S.C. § 5311 *et seq.*)
+- FinCEN National AML/CFT Priorities and ransomware-related BSA materials
+- OFAC sanctions designations (including Tornado Cash, Blender)
+- Treasury 2024 National Strategy for Combating Terrorist and Other Illicit Financing
+- Anti-Money Laundering Act of 2020
+- OCC / Federal Reserve / FDIC 2026 revised model-risk-management guidance
+- Executive Order 14178
+- 2024 Critical and Emerging Technologies List
+
+```bash
+# Ask an interpretable, citation-grounded compliance-research question
+mineai reason "What BSA documentation expectations apply to a U.S. MSB
+               offering on-chain swap aggregation across multiple chains?"
+
+# Inspect the underlying reasoning trace
+mineai reason --trace last
+```
+
+**This module produces research-grade reasoning aids. It does not file SARs, render legal opinions, or replace qualified compliance counsel.**
+
+---
 
 ## Quick Start
 
 ### Prerequisites
 
-Ensure you have [Node.js version 20](https://nodejs.org/en/download) or higher installed.
+[Node.js 20](https://nodejs.org/en/download) or higher.
 
-```bash
-curl -qL https://www.npmjs.com/install.sh | sh
-```
-
-### Installation
+### Install
 
 ```bash
 npm install -g @mine-ai/mine-ai
 mineai --version
 ```
 
-Then run from anywhere:
+### Bring your own model
+
+Mine AI is model-agnostic and does not ship with a hosted inference service. Point it at any OpenAI-compatible endpoint you already have access to:
 
 ```bash
-mineai
+export OPENAI_API_KEY="..."
+export OPENAI_BASE_URL="https://your-endpoint/v1"
+export OPENAI_MODEL="your-model-id"
 ```
 
-### Language Setup
-```bash
-# Set your preferred language
-mineai config --language en  # English (default)
-mineai config --language zh  # Chinese
-mineai config --language ja  # Japanese
-mineai config --language es  # Spanish
-```
+---
 
-## API Configuration
+## Roadmap
 
-### Option 1: OpenRouter (Recommended)
+The roadmap maps to the technical agenda this project exists to support.
 
-OpenRouter provides easy access to Kimi-K2 models with competitive pricing.
+### Phase I — Benchmarks & Pattern Documentation (0–6 months)
+- Publish a public benchmark dataset of labeled digital-asset payment-fraud and AML/CFT cases, sourced from public on-chain data, OFAC sanctions designations, and open fraud reports.
+- Release three production-pattern technical write-ups covering reconciliation, health-factor monitoring, and BTCFi-vault smart-contract integration.
+- Publish a benchmark-methodology technical report; target dissemination venue includes the NeurIPS Datasets & Benchmarks Track.
 
-#### Step 1: Register your
-1. Visit [mine-ai.xyz](https://mine-ai.xyz/)
-2. Click "Sign Up" and create your account
-3. Verify your email address
+### Phase II — Architecture Refinement & Adversarial Robustness (6–12 months)
+- Extend the CNN-LSTM, CSSA, and FinSCRA architectures with adversarial-robustness evaluation, ablation studies, and replication on the Phase-I benchmark.
+- Target peer-review venues: AAAI, IJCAI, IEEE Symposium on Security and Privacy, Financial Cryptography and Data Security, KDD, ACL Industry Track, EMNLP, NeurIPS, ICML.
+- Add adversarial-execution defense, oracle-manipulation defense, and liquidation-cascade-resilience benchmarking to Module 2.
 
-#### Step 2: Get Your API Key
-1. Log in to your account console and dashboard
-2. Navigate to "Keys" in the sidebar
-3. Click "Create Key"
-4. Give your key a name (e.g., "Mine AI")
-5. Copy the generated API key
+### Phase III — Dissemination (12+ months)
+- Public workshops, open-source reference releases, and standards or public-comment contributions where appropriate.
+- Outreach to compliance, RegTech, digital-asset risk, and model-governance practitioner communities.
 
-#### Step 3: Configure Environment Variables
-```bash
-export OPENAI_API_KEY="your_mineai_api_key_here"
-export OPENAI_BASE_URL="https://api.mine-ai.xyz"
-export OPENAI_MODEL="kimi-lite" 
-```
+---
 
-#### Step 4: Add Credits to Your Account
-1. Go to "Balance and Payment" in your dashboard
-2. Add funds to your account (minimum $5)
-3. Monitor your usage in the dashboard
+## What this is NOT
 
-## One-Click Node Operations
+- **Not a yield-farming, staking, or mining tool.** Mine AI uses digital-asset systems as a *payment-data environment for studying fraud and risk*, not as an investment opportunity.
+- **Not a node-deployment helper.** Earlier iterations of this repository focused on validator and node operations; that scope has been retired.
+- **Not financial, legal, tax, or compliance advice.**
+- **Not a production SAR-filing or sanctions-screening system.** Outputs are research aids that require qualified human review before any regulated use.
+- **Not a hosted service.** There is no paid SaaS tier, no required signup, and no proprietary API.
 
-```
- TRENDING CRYPTO PROJECTS
-┌────────────────────────────────────┐
-│                                    │
-│  GenSyn ──┐                       │
-│           ├─ Validator Setup       │
-│  Boundless┤                       │
-│           ├─ RPC Node Deployment   │
-│  NeuraBit─┤                       │
-│           ├─ Mining Node Setup     │
-│  VectorAI─┤                       │
-│           └─ Consensus Node        │
-│                                    │
-│  [AI] ──> Auto-Config ──> Deploy   │
-└────────────────────────────────────┘
-```
+---
 
-### Popular Crypto Projects
+## References
 
-```bash
-# GenSyn AI Network Validator
-mineai "Deploy a GenSyn validator node with optimal staking configuration"
+### Methods
+- Yuan, Lin, Wu, Chang. *Detection of Blockchain Online Payment Fraud Via CNN-LSTM.* BDICN 2026, ACM Digital Library. DOI [10.1145/3801228.3801323](https://doi.org/10.1145/3801228.3801323).
+- *CSSA: A Cross-Modal Semantic-Structural Alignment Framework via LLMs and Graph Contrastive Learning for Fraud Detection of Online Payment.* Preprints.org, 2026.
+- *FinSCRA: An LLM-Powered Multi-Chain Reasoning Framework for Interpretable Node Classification on Text-Attributed Graphs.* Preprints.org, 2026.
 
-# Boundless RPC Node
-mineai "Set up a Boundless RPC node on mainnet with auto-sync"
+### U.S. policy and regulatory sources
+- FBI IC3 Annual Reports (2024, 2025).
+- FinCEN National AML/CFT Priorities.
+- OFAC sanctions designations (Tornado Cash; Blender).
+- Treasury, *2024 National Strategy for Combating Terrorist and Other Illicit Financing*.
+- Anti-Money Laundering Act of 2020 (Public Law 116-283, Title LXIV).
+- Executive Order 14178 (January 23, 2025), *Strengthening American Leadership in Digital Financial Technology*.
+- OCC / Federal Reserve / FDIC, 2026 revised interagency model-risk-management guidance.
+- White House / NSTC, *2024 Critical and Emerging Technologies List*.
+- Bank Secrecy Act, 31 U.S.C. § 5311 *et seq.*
 
-# NeuraBit Mining Node
-mineai "Configure a NeuraBit mining node with best performance settings"
-
-# VectorAI Consensus Validator
-mineai "Create VectorAI validator with 1000 token stake and monitoring"
-
-# ChainMind Node
-mineai "Install ChainMind node with fast sync and security hardening"
-```
-
-### DeFi & Yield Farming
-```bash
-# CryptoYield LP Setup
-mineai "Set up CryptoYield liquidity pool for GSYN/USDC with 0.05% range"
-
-# BoundVault Staking Node
-mineai "Deploy BoundVault staking node with auto-optimization enabled"
-
-# NeuralFarm Integration
-mineai "Configure NeuralFarm node to maximize reward collection"
-```
-
-### Emerging Projects
-```bash
-# Generic node deployment with AI analysis
-mineai "Analyze this GitHub project and help me deploy a profitable node"
-
-mineai "What's the best way to run a quantum-ledger node for passive income?"
-
-# AI-powered profitability analysis
-mineai "Compare profitability of top 5 node projects over the last 30 days"
-```
-
-## Smart Node Management
-
-```
- MONITORING & OPTIMIZATION
-┌─────────────────────────────────────┐
-│                                     │
-│  Health ──┐                        │
-│           ├─ Real-time Dashboard    │
-│  Monitor ─┤                        │
-│           ├─ Performance Alerts     │
-│  Optimize─┤                        │
-│           └─ Auto-tune Parameters   │
-│                                     │
-│  [Status] ──> [Analysis] ──> [Fix]  │
-└─────────────────────────────────────┘
-```
-
-### Health Monitoring
-```bash
-# Comprehensive health check
-mineai "Check the health status of all my running nodes"
-
-# Real-time monitoring dashboard
-mineai "Set up a monitoring dashboard with alerts for my node infrastructure"
-
-# Performance optimization
-mineai "Optimize my GenSyn validator for better performance and rewards"
-```
-
-### Maintenance Automation
-```bash
-# Auto-update all nodes
-mineai "Schedule weekly updates for all my crypto nodes safely"
-
-# Backup management
-mineai "Create encrypted backups of my node data to cloud storage"
-
-# Security audit
-mineai "Perform a comprehensive security audit of my node setup"
-```
-
-## 📚 Built-in Knowledge Base
-
-Mine AI comes with a comprehensive private RAG database containing:
-
-- **📖 Node Setup Guides** - Step-by-step instructions for 100+ crypto projects
-- **💡 Best Practices** - Security, optimization, and maintenance guidelines
-- **🔧 Troubleshooting** - Common issues and solutions database
-- **📊 Market Intelligence** - Profitability analysis and trend data
-- **🛡️ Security Protocols** - Latest security practices and vulnerability alerts
-
-```bash
-# Query the knowledge base
-mineai "How can I optimize GenSyn node performance for maximum rewards?"
-mineai "What are the best security practices for running a Boundless node?"
-mineai "Compare staking rewards between NeuraBit and VectorAI networks"
-```
-
-## Beginner-Friendly Features
-
-```
- LEARNING & GUIDANCE SYSTEM
-┌─────────────────────────────────────┐
-│                                     │
-│  Wizard ──┐                        │
-│           ├─ Interactive Setup      │
-│  Guide ───┤                        │
-│           ├─ Step-by-step Tutorial  │
-│  Learn ───┤                        │
-│           ├─ Educational Mode       │
-│  Recommend┤                        │
-│           └─ AI Project Suggestions │
-│                                     │
-│  [Beginner] ──> [AI] ──> [Expert]   │
-└─────────────────────────────────────┘
-```
-
-### Guided Setup Wizard
-```bash
-# Interactive setup for beginners
-mineai "I'm new to crypto nodes, help me get started with the most profitable option"
-
-# AI-powered project recommendation
-mineai "Recommend the best node projects for $1000 budget with low risk"
-```
-
-### Educational Mode
-```bash
-# Learn while you deploy
-mineai "Teach me about GenSyn staking while we set up my validator"
-
-# Crypto fundamentals course
-mineai "Explain blockchain basics and help me understand node operations"
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**Error: Invalid API Key**
-- Verify your API key is correctly set in environment variables
-- Check that you have sufficient credits/quota
-- Ensure the API key has the correct permissions
-
-**Node Deployment Failed**
-- Check hardware requirements: `mineai "Check if my hardware meets the requirements for this node"`
-- Verify network connectivity: `mineai "Test my network connection and diagnose any issues"`
-- Review deployment logs: `mineai "Analyze my recent deployment logs and explain what went wrong"`
-
-**Language Issues**
-- Reset language settings: `mineai "Change my interface language to English"`
-- Update language packs: `mineai "Update all language translations to the latest version"`
-
-## Benchmark Results
-
-### Node Deployment Success Rate
-| Project Type | Success Rate | Average Setup Time | Beginner Success Rate |
-|--------------|-------------|-------------------|---------------------|
-| GenSyn Validator | 98% | 12 minutes | 94% |
-| Boundless Node | 99% | 8 minutes | 97% |
-| NeuraBit RPC | 96% | 15 minutes | 89% |
-| DeFi Protocols | 92% | 18 minutes | 85% |
-
-### AI Performance
-| Task Type | K2 Accuracy | Response Time | RAG Enhancement |
-|-----------|------------|---------------|----------------|
-| Node Analysis | 94% | 2.1s | +12% accuracy |
-| Troubleshooting | 91% | 1.8s | +18% accuracy |
-| Optimization | 87% | 3.2s | +15% accuracy |
+---
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+Contributions are welcome — particularly benchmark contributions, reference-implementation reproductions, and pattern write-ups grounded in publicly observable systems. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
-
-[LICENSE](./LICENSE)
-
----
-
-## 中文
-
-
-Mine AI 是一个智能命令行助手，通过先进的 AI 自动化彻底改变加密货币节点操作。专为区块链生态系统构建，Mine AI 利用 Kimi-K2 模型的强大能力，为跨多个网络部署、管理和优化加密货币节点提供无缝的一键式解决方案。
-
-## 🤖 关于 Mine AI
-
-Mine AI 代表着区块链开发工具的下一代，将对话式 AI 的力量直接带到你的终端。就像在指尖拥有一位加密专家，Mine AI 理解复杂的区块链操作并将其转化为简单、可执行的命令。
-
-### 为什么选择 Mine AI？
-
-**🧠 智能理解** - Mine AI 不仅仅执行命令；它理解上下文，预测需求，并根据你的特定设置和目标提供智能建议。
-
-**🔗 区块链原生** - 从头开始为加密操作构建，深度了解协议、共识机制和网络特定优化。
-
-**🎯 专用构建** - 每个功能都专门为加密节点运营者设计，从初学者的第一步到经验丰富的验证者管理复杂基础设施。
-
-## 🚀 核心功能
-
-- **🌍 国际化语言支持** - 多语言界面，支持中文、英文、日文、西班牙文等
-- **🔧 一键节点部署** - 自动化设置加密项目（新老项目皆可），零配置烦恼
-- **📚 内置私有 RAG 库** - 全面的加密节点操作、协议和最佳实践知识库
-- **🎯 小白友好设计** - 简化命令和智能引导，加密新手零门槛
-- **⚡ 增强 K2 解析器** - 专门针对 Kimi-K2 模型优化，配备加密专用提示工程
-- **🔌 多提供商支持** - 支持 OpenRouter、HuggingFace 和自定义平台等多种 API 提供商
-- **🛠️ 工具增强** - 高级工具链，用于节点监控、维护和优化
-
-## 🎯 完美适用于
-
-- **加密新手** - 无需技术背景，AI 全程指导
-- **节点运营者** - 简化现有节点管理工作流
-- **DeFi 农民** - 快速部署收益农场和质押节点
-- **区块链开发者** - 快速原型和测试环境
-
-## 快速开始
-
-### 前置要求
-
-确保已安装 [Node.js 20](https://nodejs.org/en/download) 或更高版本。
-
-### 安装
-
-```bash
-npm install -g @mine-ai/mine-ai
-mineai --version
-```
-
-
-## API 配置
-
-### 选项 1：Mine AI 官方接口（推荐）
-
-Mine AI 提供对 Kimi-K2 系列模型的快速接入，价格具备竞争力。
-
-#### 第一步：注册账户
-1. 访问 [mine-ai.xyz](https://mine-ai.xyz/)
-2. 点击“注册”，创建你的账户
-3. 验证你的邮箱地址
-
-#### 第二步：获取 API Key
-1. 登录你的控制台和账户面板
-2. 在侧边栏点击「Keys」
-3. 点击「创建 Key」
-4. 给你的 Key 起一个名字（例如 "Mine AI"）
-5. 复制生成的 API 密钥
-
-#### 第三步：配置环境变量
-```bash
-export OPENAI_API_KEY="your_mineai_api_key_here"
-export OPENAI_BASE_URL="https://api.mine-ai.xyz"
-export OPENAI_MODEL="kimi-lite" 
-
-### 语言设置
-```bash
-# 设置首选语言
-mineai /lang 选择  # 中文
-```
-
-## 🎮 一键节点操作
-
-### 热门加密项目
-
-```bash
-# GenSyn AI 网络验证者
-mineai "帮我部署一个 GenSyn 验证节点，这是项目文档 https://github.com/gensyn-ai/rl-swarm"
-
-# Boundless RPC 节点
-mineai "我部署一个Boundless 认证者节，这是他的文档 https://docs.beboundless.xyz/provers/quick-start "
-
-```
-
-
-### 新兴项目
-```bash
-# 通过 AI 分析进行通用节点部署
-mineai "分析这个 GitHub 项目并帮我部署一个盈利的节点"
-
-mineai "运行 quantum-ledger 节点获得被动收入的最佳方法是什么？"
-
-# AI 驱动的盈利能力分析
-mineai "比较过去 30 天内前 5 个节点项目的盈利能力"
-```
-
-## 📚 内置知识库
-
-Mine AI 配备了全面的私有 RAG 数据库，包含：
-
-- **📖 节点设置指南** - 100+ 加密项目的详细步骤说明
-- **💡 最佳实践** - 安全、优化和维护指导原则
-- **🔧 故障排除** - 常见问题和解决方案数据库
-- **📊 市场情报** - 盈利能力分析和趋势数据
-- **🛡️ 安全协议** - 最新安全实践和漏洞警报
-
-```bash
-# 查询知识库
-mineai "如何优化 GenSyn 节点性能以获得最大奖励？"
-mineai "运行 Boundless 节点的最佳安全实践是什么？"
-mineai "比较 NeuraBit 和 VectorAI 网络的质押奖励"
-```
-
-## 🌟 小白友好功能
-
-### 引导式设置向导
-```bash
-# 新手交互式设置
-mineai wizard
-
-# AI 驱动的项目推荐
-mineai recommend --budget 1000 --risk-level low --experience beginner
-```
-
-### 教育模式
-```bash
-# 边部署边学习
-mineai "在设置验证者的同时教我 GenSyn 质押知识"
-
-# 加密基础课程
-mineai "解释区块链基础知识并帮我理解节点操作"
-```
-
-## 基准测试结果
-
-### 节点部署成功率
-| 项目类型 | 成功率 | 平均设置时间 | 新手成功率 |
-|----------|--------|-------------|-----------|
-| GenSyn 验证者 | 98% | 12 分钟 | 94% |
-| Boundless 节点 | 99% | 8 分钟 | 97% |
-| NeuraBit RPC | 96% | 15 分钟 | 89% |
-| DeFi 协议 | 92% | 18 分钟 | 85% |
-
-### AI 性能
-| 任务类型 | K2 准确率 | 响应时间 | RAG 增强 |
-|----------|----------|---------|---------|
-| 节点分析 | 94% | 2.1s | +12% 准确率 |
-| 故障排除 | 91% | 1.8s | +18% 准确率 |
-| 优化 | 87% | 3.2s | +15% 准确率 |
-
----
-
-## 日本語
-
-
-Mine AI は、高度な AI 自動化を通じて暗号通貨ノード操作を革命化するインテリジェントなコマンドライン アシスタントです。ブロックチェーン エコシステム専用に構築された Mine AI は、Kimi-K2 モデルの力を活用して、複数のネットワークにわたる暗号通貨ノードの展開、管理、最適化のためのシームレスなワンクリック ソリューションを提供します。
-
-## 🚀 主要機能
-
-- **🌍 国際言語サポート** - 日本語、英語、中国語、スペイン語等をサポートする多言語インターフェース
-- **🔧 ワンクリックノード展開** - 暗号プロジェクト（新旧問わず）の自動化セットアップで設定の手間なし
-- **📚 内蔵プライベート RAG ライブラリ** - 暗号ノード操作、プロトコル、ベストプラクティスの包括的ナレッジベース
-- **🎯 初心者フレンドリー設計** - 簡素化されたコマンドとインテリジェントガイダンスで暗号初心者でも安心
-- **⚡ 強化 K2 パーサー** - Kimi-K2 モデル専用最適化と暗号特化プロンプトエンジニアリング
-- **🔌 マルチプロバイダーサポート** - OpenRouter、HuggingFace、カスタムプラットフォーム等の各種 API プロバイダーをサポート
-
-## 🎮 ワンクリックノード操作
-
-### 人気暗号プロジェクト
-
-```bash
-# GenSyn AI ネットワークバリデータ
-mineai deploy gensyn-validator
-
-# Boundless RPC ノード
-mineai deploy boundless-rpc --network mainnet
-
-# NeuraBit マイニングノード
-mineai deploy neurabit-node --auto-configure
-```
-
----
-
-## Español
-
-
-Mine AI es un asistente inteligente de línea de comandos que revoluciona las operaciones de nodos cripto a través de automatización avanzada de IA. Construido específicamente para el ecosistema blockchain, Mine AI aprovecha el poder de los modelos Kimi-K2 para proporcionar soluciones seamless de un clic para desplegar, gestionar y optimizar nodos de criptomonedas a través de múltiples redes.
-
-## 🚀 Características Principales
-
-- **🌍 Soporte de Idiomas Internacionales** - Interfaz multiidioma compatible con español, inglés, chino, japonés y más
-- **🔧 Despliegue de Nodos con Un Clic** - Configuración automatizada para proyectos cripto (nuevos y establecidos) sin complicaciones de configuración
-- **📚 Base de Datos RAG Privada Integrada** - Base de conocimiento integral para operaciones de nodos cripto, protocolos y mejores prácticas
-- **🎯 Diseño Amigable para Principiantes** - Comandos simplificados y guía inteligente para recién llegados a las criptomonedas
-
-## 🎮 Operaciones de Nodos con Un Clic
-
-### Proyectos Cripto Populares
-
-```bash
-# Validador de Red GenSyn AI
-mineai deploy gensyn-validator
-
-# Nodo RPC Boundless
-mineai deploy boundless-rpc --network mainnet
-
-# Nodo de Minería NeuraBit
-mineai deploy neurabit-node --auto-configure
-```
-
-## Licencia
 
 [LICENSE](./LICENSE)

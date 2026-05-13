@@ -1,0 +1,8 @@
+node_modules/
+.mineai-last-trace.json
+*.log
+.DS_Store
+*.tgz
+.env
+.env.*
+!.env.example

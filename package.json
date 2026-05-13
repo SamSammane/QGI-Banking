@@ -1,0 +1,41 @@
+{
+  "name": "@mine-ai/mine-ai",
+  "version": "0.1.0",
+  "description": "Open-source reference implementations for AI-enabled payment security, fraud detection, and AML/CFT compliance.",
+  "keywords": [
+    "payment-security",
+    "fraud-detection",
+    "aml",
+    "cft",
+    "compliance",
+    "blockchain",
+    "graph-temporal",
+    "llm",
+    "rag",
+    "reference-implementation"
+  ],
+  "homepage": "https://github.com/mine-ai-xyz/mine-ai#readme",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "mineai": "bin/mineai.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "patterns",
+    "samples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/mineai.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}

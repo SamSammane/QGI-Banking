@@ -1,0 +1,17 @@
+{
+  "_note": "SYNTHETIC ILLUSTRATIVE SAMPLE. Addresses, amounts, and timestamps are fabricated for CLI demonstration purposes only. No real entity is implied or referenced.",
+  "schema_version": "0.1",
+  "chain": "synthetic-btc-like",
+  "transactions": [
+    { "tx_id": "stx_0001", "from": "addr_A", "to": "addr_B", "amount": 0.5,  "timestamp": "2026-01-01T00:00:00Z", "label": "normal" },
+    { "tx_id": "stx_0002", "from": "addr_B", "to": "addr_C", "amount": 0.49, "timestamp": "2026-01-01T00:02:00Z", "label": "normal" },
+    { "tx_id": "stx_0003", "from": "addr_C", "to": "addr_D", "amount": 0.48, "timestamp": "2026-01-01T00:04:00Z", "label": "normal" },
+    { "tx_id": "stx_0004", "from": "addr_X", "to": "addr_M1", "amount": 10.0, "timestamp": "2026-01-01T00:10:00Z", "label": "suspect" },
+    { "tx_id": "stx_0005", "from": "addr_M1", "to": "addr_M2", "amount": 9.99, "timestamp": "2026-01-01T00:10:30Z", "label": "suspect" },
+    { "tx_id": "stx_0006", "from": "addr_M2", "to": "addr_M3", "amount": 9.98, "timestamp": "2026-01-01T00:11:00Z", "label": "suspect" },
+    { "tx_id": "stx_0007", "from": "addr_M3", "to": "addr_M4", "amount": 9.97, "timestamp": "2026-01-01T00:11:30Z", "label": "suspect" },
+    { "tx_id": "stx_0008", "from": "addr_M4", "to": "addr_M5", "amount": 9.96, "timestamp": "2026-01-01T00:12:00Z", "label": "suspect" },
+    { "tx_id": "stx_0009", "from": "addr_M5", "to": "addr_Y", "amount": 9.95, "timestamp": "2026-01-01T00:12:30Z", "label": "suspect" },
+    { "tx_id": "stx_0010", "from": "addr_E", "to": "addr_F", "amount": 0.1,  "timestamp": "2026-01-01T00:20:00Z", "label": "normal" }
+  ]
+}
