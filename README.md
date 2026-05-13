@@ -1,5 +1,7 @@
 # Mine AI
 
+[![GitHub stars](https://img.shields.io/github/stars/mine-ai-xyz/mine-ai?style=social)](https://github.com/mine-ai-xyz/mine-ai/stargazers)
+
 **Open-Source Reference Implementations for AI-Enabled Payment Security, Fraud Detection, and AML/CFT Compliance**
 
 ```
