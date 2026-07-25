@@ -17,6 +17,24 @@ function firstHeading(md) {
   return line ? line.replace(/^#\s+/, '').trim() : '';
 }
 
+/** Pattern index as data, for callers that render it themselves (e.g. MCP). */
+export function listPatterns() {
+  return listPatternFiles().map((it) => {
+    let title = '';
+    try {
+      title = firstHeading(readFileSync(it.file, 'utf8'));
+    } catch {}
+    return { name: it.name, title };
+  });
+}
+
+/** Full pattern document, or null when the name is unknown. */
+export function readPattern(name) {
+  const match = listPatternFiles().find((it) => it.name === name);
+  if (!match) return null;
+  return { name: match.name, content: readFileSync(match.file, 'utf8') };
+}
+
 export async function patternList() {
   const items = listPatternFiles();
   if (items.length === 0) {

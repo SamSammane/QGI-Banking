@@ -4,7 +4,13 @@ import { join } from 'node:path';
 import { citationsBlock, citationKeys } from '../policy/citations.js';
 import { readLlmEnv, chatComplete } from '../llm.js';
 
-const TRACE_PATH = join(homedir(), '.mineai-last-trace.json');
+export const TRACE_PATH = join(homedir(), '.mineai-last-trace.json');
+
+/** Read the trace written by the last `mineai reason` call, or null. */
+export function readLastTrace() {
+  if (!existsSync(TRACE_PATH)) return null;
+  return JSON.parse(readFileSync(TRACE_PATH, 'utf8'));
+}
 
 const SYSTEM_PROMPT = `You are Mine AI's Module 3 reasoning assistant.
 
@@ -85,10 +91,10 @@ export async function reasonTrace(which) {
     console.error('Only `--trace last` is supported in v0.1.');
     process.exit(2);
   }
-  if (!existsSync(TRACE_PATH)) {
+  const trace = readLastTrace();
+  if (!trace) {
     console.error('No prior reasoning trace found. Run `mineai reason "..."` first.');
     process.exit(2);
   }
-  const trace = JSON.parse(readFileSync(TRACE_PATH, 'utf8'));
   console.log(formatTraceForPrint(trace));
 }
