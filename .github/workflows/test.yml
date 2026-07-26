@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  # Only the default branch on push. Any other branch is covered by its pull
+  # request, and matching '**' here would run every job twice on a PR branch.
+  push:
+    branches: [public-release-filtered]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # package.json requires Node >= 20; cover that floor and current.
+        node-version: ['20', '22']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
+
+      # The suite exercises the CLI through a subprocess, but not that the
+      # published bin entry resolves — `files` and `bin` in package.json can
+      # drift without any test noticing.
+      - name: Check the bin entrypoint runs
+        run: node bin/mineai.js --version
