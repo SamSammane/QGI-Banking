@@ -1,8 +1,10 @@
 name: Test
 
 on:
+  # Only the default branch on push. Any other branch is covered by its pull
+  # request, and matching '**' here would run every job twice on a PR branch.
   push:
-    branches: ['**']
+    branches: [public-release-filtered]
   pull_request:
 
 permissions:
