@@ -208,6 +208,8 @@ mineai screen "Vladimir Petrov" --min-match 0.9
 
 Watchman is wired up today. The remaining entries record the integration point — endpoint variable, capability, and why the seam sits where it does — without pretending the adapter exists. Notably, `kyc-analyst` is deliberately *not* re-implemented here: its four-factor risk weights are meant to be calibrated per firm, so this CLI would be the wrong place to freeze them.
 
+**[`docs/INTEGRATION.md`](docs/INTEGRATION.md)** is the full plan: every sibling system, the exact endpoint or file each integration attaches to, sequencing, the decisions taken and what would reverse them, and the gaps that remain open.
+
 ### Serving these capabilities to agents
 
 Several sibling projects are agent runtimes rather than services — they consume tools instead of exposing them. `mineai mcp serve` speaks MCP over stdio so they can call verification, screening, and the citation set directly:
