@@ -18,7 +18,7 @@
 
 Mine AI is an open-source toolkit and command-line workspace for advancing AI-enabled payment-security, fraud-detection, AML/CFT compliance, and risk-control infrastructure for U.S.-accessible digital-asset and blockchain-based payment systems — through graph-temporal deep-learning models, production-grade transaction reconciliation and risk controls, and LLM-powered interpretable compliance reasoning.
 
-It is structured as three independently usable modules that together cover the detection layer, the operational risk-control layer, and the interpretability/compliance-reasoning layer of a modern payment-security stack.
+It is structured as four independently usable modules that together cover the detection layer, the operational risk-control layer, the interpretability/compliance-reasoning layer, and the neural-symbolic verification layer of a modern payment-security stack.
 
 This is **research and reference-implementation infrastructure**, not a production fraud-detection product and not financial, legal, or compliance advice.
 
@@ -42,9 +42,16 @@ Industry detection systems still rely heavily on rule-based heuristics — addre
 
 ## Architecture
 
-Mine AI is organized as three modules that map to the detection, operations, and compliance-reasoning layers of a payment-security stack:
+Mine AI is organized as four modules that map to the detection, operations, compliance-reasoning, and verification layers of a payment-security stack:
 
 ```
++-----------------------------------------------------------------+
+|  Module 4 — Neural-Symbolic Verification & Integration          |
+|    Deterministic checks over model-generated compliance text    |
+|    Adapters to sibling systems; MCP server over stdio           |
++-----------------------------------------------------------------+
+                              ^
+                              |
 +-----------------------------------------------------------------+
 |  Module 3 — LLM-Powered Interpretable Compliance Reasoning      |
 |    RAG over BSA / FinCEN / OFAC / EO 14178 corpus               |
@@ -68,7 +75,7 @@ Mine AI is organized as three modules that map to the detection, operations, and
 +-----------------------------------------------------------------+
 ```
 
-If detection models cannot trust the underlying ledger state (Module 2), their outputs are unreliable; if their outputs cannot be explained (Module 3), they are difficult to operate in regulated workflows. The three modules are designed to be used together but can be adopted independently.
+If detection models cannot trust the underlying ledger state (Module 2), their outputs are unreliable; if their outputs cannot be explained (Module 3), they are difficult to operate in regulated workflows; and if an explanation cannot be checked without asking the model whether it was right (Module 4), it is a claim rather than evidence. The four modules are designed to be used together but can be adopted independently.
 
 ---
 
@@ -150,6 +157,76 @@ mineai reason --trace last
 
 ---
 
+## Module 4 — Neural-Symbolic Verification & Integration
+
+Module 3 constrains a language model to a closed citation set and asks it to show its work. Module 4 checks whether it did — with deterministic rules, and without consulting the model again. A generated answer is a *claim*; a claim you can check against a fixed corpus is *evidence*.
+
+### Verification
+
+`mineai verify` runs symbolic checkers over model-produced text:
+
+| Check | Severity | What it establishes |
+| --- | --- | --- |
+| `citation-keys` | **fail** | Every `[KEY]` resolves to the local citation set. A key outside it is fabricated by definition — this is the failure mode that is hardest to spot by eye and most costly to rely on. |
+| `structure` | **fail** | The mandated Short Answer / Reasoning / Sources Used / Caveats sections are present. |
+| `sources-consistency` | warn | The declared source list and the keys actually cited in the reasoning agree. |
+| `numeric-grounding` | warn | Dollar and percentage figures appear in the citation corpus. |
+| `prohibited-output` | warn | No SAR narrative or rendered legal opinion, allowing for markers used while *declining*. |
+| `sanctions-screening` | warn | Entity names mentioned in the text are screened against sanctions and PEP lists. |
+
+```bash
+# Check the answer the last `mineai reason` call produced
+mineai reason "..." && mineai verify --trace last
+
+# Check a claim from anywhere, including a pipe
+mineai verify --claim "Reporting duties arise under [BSA]."
+cat answer.md | mineai verify --json
+
+# Also screen every entity name the text mentions
+mineai verify --trace last --screen
+```
+
+Exit codes distinguish a content failure from a tool failure: `0` clean, `4` a check failed, `2` usage, `3` missing credentials or endpoint, `5` a backend was unreachable.
+
+Two properties are deliberate. **Skipped is not passed** — a check that could not run (screening with no reachable index) reports `skipped`, never a clean result. And **warnings are honest about their heuristics**: entity extraction is capitalised-run matching, not NER, and the prohibited-output checker cannot always distinguish producing something from refusing to. Both mark work for a human rather than pretending to settle it.
+
+### Integration
+
+The other reference implementations in this family are reached through adapters, not vendored. Each is tagged by role: **symbolic** systems are deterministic and can serve as verification oracles; **neural** systems produce claims that need checking.
+
+```bash
+# What can be reached, and what is merely declared
+mineai adapter list
+
+# Probe reachability
+mineai adapter check watchman
+
+# Deterministic sanctions / PEP screening via a running Watchman
+export MINEAI_WATCHMAN_URL=http://localhost:8084
+mineai screen "Vladimir Petrov" --min-match 0.9
+```
+
+Watchman is wired up today. The remaining entries record the integration point — endpoint variable, capability, and why the seam sits where it does — without pretending the adapter exists. Notably, `kyc-analyst` is deliberately *not* re-implemented here: its four-factor risk weights are meant to be calibrated per firm, so this CLI would be the wrong place to freeze them.
+
+### Serving these capabilities to agents
+
+Several sibling projects are agent runtimes rather than services — they consume tools instead of exposing them. `mineai mcp serve` speaks MCP over stdio so they can call verification, screening, and the citation set directly:
+
+```bash
+mineai mcp tools     # list the exposed tool surface
+mineai mcp serve     # run the server over stdio
+```
+
+Register it with any MCP client:
+
+```json
+{ "command": "mineai", "args": ["mcp", "serve"] }
+```
+
+Tools: `verify_reasoning`, `screen_entity`, `list_citations`, `list_patterns`, `get_pattern`, `list_models`, `get_model_card`, `list_adapters`. The server is plain JSON-RPC 2.0 written against the protocol directly, so the install stays at one dependency.
+
+---
+
 ## Quick Start
 
 ### Prerequisites
@@ -202,6 +279,7 @@ The roadmap maps to the technical agenda this project exists to support.
 - **Not financial, legal, tax, or compliance advice.**
 - **Not a production SAR-filing or sanctions-screening system.** Outputs are research aids that require qualified human review before any regulated use.
 - **Not a hosted service.** There is no paid SaaS tier, no required signup, and no proprietary API.
+- **Not a correctness proof.** `mineai verify` establishes that specific failure modes are absent — fabricated citations, ungrounded figures, missing structure. A `PASS` means those checks found nothing, not that the answer is right.
 
 ---
 
